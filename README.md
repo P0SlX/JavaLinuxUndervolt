@@ -48,9 +48,8 @@ Kernel: 5.8.6-1
 
 ## Some screenshot
 
-![Screen1](https://i.imgur.com/hKZ5hEh.png)
-![Screen2](https://i.imgur.com/T0sKItC.png)
-![Screen3](https://i.imgur.com/8CApzQg.png)
+![Screen1](https://imgur.com/A19tAgx.png)
+![Screen2](https://imgur.com/qkPamUS.png)
 
 ## Thanks to
 
@@ -59,5 +58,5 @@ Kernel: 5.8.6-1
 [Caffinc](https://caffinc.github.io/2016/03/cpu-load-generator/)
 
 ## Made with love by
+> zmalrobot<br>
 > p0slx
-> zmalrobot 
