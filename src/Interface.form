@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interface">
-  <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="900" height="457"/>
     </constraints>
     <properties>
       <background color="-1314321"/>
@@ -12,205 +12,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="6ab15" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-1314321"/>
-          <font name="Ubuntu"/>
-          <foreground color="-1314321"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="91118" class="javax.swing.JSlider" binding="coreSlider">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1314321"/>
-              <font name="Ubuntu"/>
-              <foreground color="-11750482"/>
-              <inverted value="false"/>
-              <maximum value="175"/>
-              <minimum value="-175"/>
-              <value value="0"/>
-              <valueIsAdjusting value="false"/>
-            </properties>
-          </component>
-          <component id="f3ed9" class="javax.swing.JSlider" binding="gpuSlider">
-            <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1314321"/>
-              <font name="Ubuntu"/>
-              <foreground color="-11750482"/>
-              <maximum value="175"/>
-              <minimum value="-175"/>
-              <value value="0"/>
-            </properties>
-          </component>
-          <component id="30f12" class="javax.swing.JSlider" binding="cacheSlider">
-            <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1314321"/>
-              <font name="Ubuntu"/>
-              <foreground color="-11750482"/>
-              <maximum value="175"/>
-              <minimum value="-175"/>
-              <value value="0"/>
-            </properties>
-          </component>
-          <component id="7f1f7" class="javax.swing.JSlider" binding="uncoreSlider">
-            <constraints>
-              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1314321"/>
-              <font name="Ubuntu"/>
-              <foreground color="-11750482"/>
-              <maximum value="175"/>
-              <minimum value="-175"/>
-              <value value="0"/>
-            </properties>
-          </component>
-          <component id="40eb3" class="javax.swing.JSlider" binding="analogioSlider">
-            <constraints>
-              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1314321"/>
-              <font name="Ubuntu"/>
-              <foreground color="-11750482"/>
-              <maximum value="175"/>
-              <minimum value="-175"/>
-              <value value="0"/>
-            </properties>
-          </component>
-          <component id="b7a8f" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="Analogio"/>
-            </properties>
-          </component>
-          <component id="fe1a0" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="Uncore"/>
-            </properties>
-          </component>
-          <component id="9e00c" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="Core"/>
-            </properties>
-          </component>
-          <component id="757b0" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="Gpu"/>
-            </properties>
-          </component>
-          <component id="aa4d0" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="Cache"/>
-            </properties>
-          </component>
-          <component id="1aab5" class="javax.swing.JLabel" binding="valueCore">
-            <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="0"/>
-            </properties>
-          </component>
-          <component id="b52e1" class="javax.swing.JLabel" binding="valueGpu">
-            <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="0"/>
-            </properties>
-          </component>
-          <component id="fbd87" class="javax.swing.JLabel" binding="valueCache">
-            <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="0"/>
-            </properties>
-          </component>
-          <component id="81f38" class="javax.swing.JLabel" binding="valueUncore">
-            <constraints>
-              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="0"/>
-            </properties>
-          </component>
-          <component id="b799e" class="javax.swing.JLabel" binding="valueAnalogio">
-            <constraints>
-              <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu"/>
-              <foreground color="-14207403"/>
-              <text value="0"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <component id="368be" class="javax.swing.JButton" binding="applybutton">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14207403"/>
-          <font name="Ubuntu"/>
-          <foreground color="-1314321"/>
-          <text value="Apply"/>
-        </properties>
-      </component>
-      <vspacer id="c5567">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="15"/>
-          </grid>
-        </constraints>
-      </vspacer>
       <vspacer id="91883">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
@@ -218,26 +19,15 @@
           </grid>
         </constraints>
       </vspacer>
-      <component id="4143a" class="javax.swing.JButton" binding="faqbutton">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14207403"/>
-          <font name="Ubuntu"/>
-          <foreground color="-1314321"/>
-          <text value="Faq and  error code"/>
-        </properties>
-      </component>
       <component id="2843b" class="javax.swing.JButton" binding="resetbutton">
         <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-6814675"/>
           <font name="Ubuntu"/>
           <foreground color="-1314321"/>
-          <text value="Defalut settings"/>
+          <text value="Default settings"/>
         </properties>
       </component>
       <component id="c9df8" class="javax.swing.JButton" binding="buttonLoad">
@@ -248,10 +38,359 @@
           <background color="-14207403"/>
           <font name="Ubuntu"/>
           <foreground color="-1314321"/>
-          <text value="Load"/>
+          <text value="Load settings"/>
         </properties>
       </component>
-      <component id="ed119" class="javax.swing.JButton" binding="buttonSave">
+      <grid id="d4ec3" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="6ab15" layout-manager="GridLayoutManager" row-count="8" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1314321"/>
+              <font name="Ubuntu"/>
+              <foreground color="-1314321"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="fe1a0" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="P2 Time Window"/>
+                </properties>
+              </component>
+              <component id="9e00c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="P1"/>
+                </properties>
+              </component>
+              <component id="1aab5" class="javax.swing.JLabel" binding="p1Value">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="81f38" class="javax.swing.JLabel" binding="p2TimeWindowValue">
+                <constraints>
+                  <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="c05be" class="javax.swing.JSlider" binding="p1Slider">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="0"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="6aaea" class="javax.swing.JSlider" binding="p2TimeWindowSlider">
+                <constraints>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="0"/>
+                  <paintLabels value="false"/>
+                  <paintTicks value="false"/>
+                  <paintTrack value="true"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="aa4d0" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="P1 Time Window"/>
+                </properties>
+              </component>
+              <component id="f7ef9" class="javax.swing.JSlider" binding="p1TimeWindowSlider">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="0"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="fccd6" class="javax.swing.JSlider" binding="p2Slider">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="0"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="757b0" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="P2"/>
+                </properties>
+              </component>
+              <component id="fbd87" class="javax.swing.JLabel" binding="p1TimeWindowValue">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="b52e1" class="javax.swing.JLabel" binding="p2Value">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="8848" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1314321"/>
+              <font name="Ubuntu"/>
+              <foreground color="-1314321"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="836c0" class="javax.swing.JSlider" binding="coreSlider">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <inverted value="false"/>
+                  <maximum value="175"/>
+                  <minimum value="-175"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                  <valueIsAdjusting value="false"/>
+                </properties>
+              </component>
+              <component id="261a7" class="javax.swing.JSlider" binding="gpuSlider">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="-175"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="fb1be" class="javax.swing.JSlider" binding="cacheSlider">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="-175"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="3247b" class="javax.swing.JSlider" binding="uncoreSlider">
+                <constraints>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="-175"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="28d66" class="javax.swing.JSlider" binding="analogioSlider">
+                <constraints>
+                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1314321"/>
+                  <font name="Ubuntu"/>
+                  <foreground color="-11750482"/>
+                  <maximum value="175"/>
+                  <minimum value="-175"/>
+                  <snapToTicks value="false"/>
+                  <value value="0"/>
+                </properties>
+              </component>
+              <component id="71d59" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="Analogio"/>
+                </properties>
+              </component>
+              <component id="fc72a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="Uncore"/>
+                </properties>
+              </component>
+              <component id="58b93" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="Core"/>
+                </properties>
+              </component>
+              <component id="bea5b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="Gpu"/>
+                </properties>
+              </component>
+              <component id="fc802" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="Cache"/>
+                </properties>
+              </component>
+              <component id="a4e28" class="javax.swing.JLabel" binding="valueCore">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="be684" class="javax.swing.JLabel" binding="valueGpu">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="593c" class="javax.swing.JLabel" binding="valueCache">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="1772b" class="javax.swing.JLabel" binding="valueUncore">
+                <constraints>
+                  <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+              <component id="e50f4" class="javax.swing.JLabel" binding="valueAnalogio">
+                <constraints>
+                  <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Ubuntu"/>
+                  <foreground color="-14207403"/>
+                  <text value="0"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <component id="8558c" class="javax.swing.JButton" binding="applybutton">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -259,9 +398,58 @@
           <background color="-14207403"/>
           <font name="Ubuntu"/>
           <foreground color="-1314321"/>
-          <text value="Save"/>
+          <text value="Only apply settings"/>
         </properties>
       </component>
+      <component id="4143a" class="javax.swing.JButton" binding="faqbutton">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14207403"/>
+          <font name="Ubuntu"/>
+          <foreground color="-1314321"/>
+          <text value="FAQ / Error codes"/>
+        </properties>
+      </component>
+      <component id="ed119" class="javax.swing.JButton" binding="buttonSave">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14207403"/>
+          <font name="Ubuntu"/>
+          <foreground color="-1314321"/>
+          <text value="Save settings"/>
+        </properties>
+      </component>
+      <component id="368be" class="javax.swing.JButton" binding="applyAndStressButton">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14207403"/>
+          <font name="Ubuntu"/>
+          <foreground color="-1314321"/>
+          <text value="Apply with stress test"/>
+        </properties>
+      </component>
+      <component id="5a045" class="javax.swing.JToggleButton" binding="stressTestButton">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentY value="0.0"/>
+          <text value="Stress test only"/>
+        </properties>
+      </component>
+      <vspacer id="a3dc1">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="15"/>
+          </grid>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
 </form>

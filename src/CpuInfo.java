@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class CpuInfo {
 
-    private Config configs = new Config();
     private String path;
     //Info
     private ArrayList<String> cpuInfo;
@@ -43,7 +42,6 @@ public class CpuInfo {
 
     public CpuInfo(){
         //Read only once
-        path = configs.getScript_path();
         cpuInfo = readCpuInfo(path);
 
         updateValue();
@@ -66,7 +64,8 @@ public class CpuInfo {
 
         try {
             // Create process
-            Process p = Runtime.getRuntime().exec(path+"getCpuInfo.sh");
+            String[] cmd = {"/bin/sh", "-c", "lscpu"};
+            Process p = Runtime.getRuntime().exec(cmd);
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
             //Read process return
@@ -95,10 +94,10 @@ public class CpuInfo {
 
     //Cpu frequency
     private void readCpufreq(String path){
-
         try {
             // Create process
-            Process p = Runtime.getRuntime().exec(path+"actualCpuFreq.sh");
+            String[] cmd = {"/bin/sh", "-c", "lscpu | grep MHz"};
+            Process p = Runtime.getRuntime().exec(cmd);
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
             //Read process
@@ -128,10 +127,10 @@ public class CpuInfo {
 
     //Cpu temperature
     private void readCputemp(String path){
-
         try {
             // Create process
-            Process p = Runtime.getRuntime().exec(path+"actualCpuTemp.sh");
+            String[] cmd = {"/bin/sh", "-c", "cat /sys/class/thermal/thermal_zone*/temp"};
+            Process p = Runtime.getRuntime().exec(cmd);
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
             //Read process
@@ -158,17 +157,14 @@ public class CpuInfo {
     }
 
     //Cpu load
-    private void readCpuload(String path){
-
+    private void readCpuload(String path) {
         try {
             // Create process
-            Process p = Runtime.getRuntime().exec(path+"actualCpuLoad.sh");
+            String[] cmd = {"/bin/sh", "-c", "echo $[100-$(vmstat 1 2|tail -1|awk '{print $15}')]"};    // TODO Make sure vmstat is installed
+            Process p = Runtime.getRuntime().exec(cmd);
             BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-
             //Read process
             load  = in.readLine();
-
-
         } catch (IOException e) {
             //No script
             e.printStackTrace();

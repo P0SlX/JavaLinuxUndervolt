@@ -8,8 +8,7 @@ import java.util.HashMap;
 public class Profile {
 
     private final JFrame frame;
-    private Config configs = new Config();
-
+    private UndervoltValue undervoltValue = new UndervoltValue();
     private HashMap<String, Double> returnValue;
 
     //Constructor
@@ -18,15 +17,22 @@ public class Profile {
     }
 
     //Save data to file
-    public void save(int coreSliderValue, int gpuSliderValue, int cacheSliderValue, int uncoreSliderValue, int analogioSliderValue){
-        JFileChooser fileChooser = new JFileChooser(new File(configs.getSave_path())){
+    public void save(int coreSliderValue, int gpuSliderValue, int cacheSliderValue, int uncoreSliderValue, int analogioSliderValue, int p1SliderValue, int p1TimeWindowSliderValue, int p2SliderValue, int p2TimeWindowSliderValue){
+        JFileChooser fileChooser = new JFileChooser(){
             @Override
             protected JDialog createDialog( Component parent ) throws HeadlessException {
                 JDialog dialog = super.createDialog( parent );
                 try {
-                    dialog.setIconImage(ImageIO.read(new File(configs.getImage_path()+"icosave.png")));
+                    InputStream in = getClass().getResourceAsStream("/img/icosave.png");
+                    if (in == null) {
+                        dialog.setIconImage(ImageIO.read(new File("/resources/img/icosave.png")));           // JAR
+                    } else {
+                        dialog.setIconImage(ImageIO.read(getClass().getResourceAsStream("/img/icosave.png")));   // IDE
+                    }
                 } catch (IOException e) {
+                    e.printStackTrace();
                     System.out.println("No icon found");
+
                 }
                 return dialog;
             }
@@ -40,18 +46,31 @@ public class Profile {
 
             try {
                 Date today = new Date();
-                FileWriter fw = new FileWriter(fileChooser.getSelectedFile()+".txt");
+                FileWriter fw = null;
+                if (fileChooser.getSelectedFile().getName().endsWith(".txt")) {
+                    fw = new FileWriter(fileChooser.getSelectedFile());
+                } else {
+                    fw = new FileWriter(fileChooser.getSelectedFile() + ".txt");
+                }
                 fw.write("#Setting profile data: " + today);
                 fw.write("\n");
-                fw.write("core: " + coreSliderValue+".0 mV");
+                fw.write("core: " + coreSliderValue + ".0 mV");
                 fw.write("\n");
-                fw.write("gpu: " + gpuSliderValue+".0 mV");
+                fw.write("gpu: " + gpuSliderValue + ".0 mV");
                 fw.write("\n");
-                fw.write("cache: " + cacheSliderValue+".0 mV");
+                fw.write("cache: " + cacheSliderValue + ".0 mV");
                 fw.write("\n");
-                fw.write("uncore: " + uncoreSliderValue+".0 mV");
+                fw.write("uncore: " + uncoreSliderValue + ".0 mV");
                 fw.write("\n");
-                fw.write("analogio: " + analogioSliderValue+".0 mV");
+                fw.write("analogio: " + analogioSliderValue + ".0 mV");
+                fw.write("\n");
+                fw.write("p1: " + p1SliderValue + ".0 W");
+                fw.write("\n");
+                fw.write("p2: " + p2SliderValue + ".0 W");
+                fw.write("\n");
+                fw.write("p1TimeWindow: " + p1TimeWindowSliderValue + ".0 s");
+                fw.write("\n");
+                fw.write("p2TimeWindow: " + p2TimeWindowSliderValue + ".0 s");
                 fw.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -61,18 +80,26 @@ public class Profile {
 
 
     //Read data from file
-    public HashMap<String, Double> read(){
+    public HashMap<String, Double> read() {
 
         returnValue = new  HashMap<String, Double>();
 
-        JFileChooser fileChooser = new JFileChooser(new File(configs.getSave_path())){
+        JFileChooser fileChooser = new JFileChooser(){
             @Override
             protected JDialog createDialog( Component parent ) throws HeadlessException {
                 JDialog dialog = super.createDialog( parent );
+
                 try {
-                    dialog.setIconImage(ImageIO.read(new File(configs.getImage_path()+"icoload.png")));
+                    InputStream in = getClass().getResourceAsStream("/img/icoload.png");
+                    if (in == null) {
+                        dialog.setIconImage(ImageIO.read(new File("/resources/img/icoload.png")));           // JAR
+                    } else {
+                        dialog.setIconImage(ImageIO.read(getClass().getResourceAsStream("/img/icoload.png")));   // IDE
+                    }
                 } catch (IOException e) {
+                    e.printStackTrace();
                     System.out.println("No icon found");
+
                 }
                 return dialog;
             }
@@ -86,11 +113,10 @@ public class Profile {
             File file = fileChooser.getSelectedFile();
 
             readfile(file);
-            return returnValue;
-        } else{
+        } else {
             returnValue.put("errors", 0.0);
-            return returnValue;
         }
+        return UndervoltValue.returnValue;
 
     }
 
@@ -108,28 +134,12 @@ public class Profile {
             line = reader.readLine();
             while (line != null) {
                  System.out.println(line);
-                 addToHasmap(line);
+                 UndervoltValue.addToHashmap(line);
                  line = reader.readLine();
             }
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    //Create the hashmap (i's a duplicate forn now form undervolt class, i'll remove soon or later)
-    private void addToHasmap(String scrptString){
-
-        //String preparation
-        scrptString = scrptString.replace("mV", "");
-        scrptString = scrptString.replace(" ", "");
-        String[] parts = scrptString.split(":");
-        String name  = parts[0]; // Core
-        String value = parts[1]; // 0.0
-
-        //Add to hashmap
-        System.out.println("Adding: " + name + " Value: " + value );
-        returnValue.put(name, Double.parseDouble(value));
-
     }
 }

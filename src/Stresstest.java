@@ -1,47 +1,37 @@
-public class Stresstest {
-    /**
-     * Starts the Load Generation
-     *
-     * @param args Command line arguments, ignored
-     */
+import javax.management.relation.RoleUnresolved;
+import java.util.ArrayList;
 
-    private int numCore;
-    private int numThreadsPerCore;
+public class Stresstest {
+
+    private final int numCore;
     private double load;
-    private long duration;
+    private final ArrayList<BusyThread> listOfActivesThreads;
 
     public Stresstest() {
-        numCore           = 1;
-        numThreadsPerCore = 2;
-        load              = 0.5;
-        duration          = 60;
+        this.numCore              = Runtime.getRuntime().availableProcessors();
+        this.load                 = 1.0;
+        this.listOfActivesThreads = new ArrayList<>();
     }
 
-    public void setStress(int numCore, int numThreadsPerCore, double load, long duration){
-        this.numCore           = numCore;
-        this.numThreadsPerCore = numThreadsPerCore;
-        this.load              = load;
-        this.duration          = duration;
-    }
+    public void startStress(long duration) {
+        int nbCores = Runtime.getRuntime().availableProcessors();
+        System.out.println("Stress test:\n    Cores: " + nbCores + " Duration: " + (duration == Long.MAX_VALUE ? "Infinite" : duration / 1000 + " sec"));
 
-    public void setStressMaxCore(long duration){
-
-        // get the runtime object associated with the current Java application
-        Runtime runtime = Runtime.getRuntime();
-        // get the number of processors available to the Java virtual machine
-        int numberOfProcessors = runtime.availableProcessors();
-
-        this.numCore           = numberOfProcessors;
-        this.numThreadsPerCore = numberOfProcessors;
-        this.load              = 1.0;
-        this.duration          = duration;
-    }
-
-    public void startStress(){
-        System.out.println("Stress: cpu: "+ numCore+ " ThreadPerCore: "+ numThreadsPerCore+ " Duration: " + duration);
-        for (int thread = 0; thread < numCore * numThreadsPerCore; thread++) {
-            new BusyThread("Thread" + thread, load, duration).start();
+        if (this.listOfActivesThreads.isEmpty()) {
+            // Create threads
+            for (int i = 0; i < nbCores; i++) {
+                this.listOfActivesThreads.add(new BusyThread("Thread" + i, load, duration));
+                this.listOfActivesThreads.get(i).start();
+            }
+        } else {
+            System.out.println("Stress test already running.");
         }
+    }
+
+    public void stopStress() {
+        System.out.println("Stoping stress test.");
+        this.listOfActivesThreads.forEach(Thread::interrupt);
+        this.listOfActivesThreads.clear();
     }
 }
 

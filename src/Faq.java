@@ -3,10 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Faq {
-
-    private Config configs = new Config();
 
     private JPanel FaqMainPanel;
     private JTextPane faq;
@@ -14,48 +13,46 @@ public class Faq {
 
     public Faq(){
         faq.setText("<html>"+
-                "<p><strong>Faq: </strong></p>" +
+                "<p><strong>FAQ: </strong></p>" +
                 "<ol>" +
-                "<li>Why does the cpu go to maximum when I apply the settings?<br />" +
+                "<li>Why does the CPU go to maximum when I apply the settings?<br />" +
                 "<ol>" +
-                "<li>Because a 10 second test is performed&nbsp; to ensure the stability of the system</li>" +
+                "<li>Because a 10-second test is performed to ensure the stability of the system.</li>" +
                 "</ol>" +
                 "</li>" +
-                "<li>Why my cpu is not supported?<br />" +
+                "<li>Why my CPU is not supported?<br />" +
                 "<ol>" +
-                "<li> Depends on the architecture and implementation of the manufacturer, for more information visit the developer page diundervolt.py (see below )</li>" +
+                "<li>Depends on the architecture and implementation of the manufacturer, for more information, visit the undervolt.py README (see below).</li>" +
                 "</ol>" +
                 "</li>" +
-                "<li>I have and AMD processor why does not work?<br />" +
+                "<li>I have an AMD processor why does not work?<br />" +
                 "<ol>" +
-                "<li>Because the script that i'm using is for INTEL cpu only ( <a href='https://github.com/mihic/linux-intel-undervolt'>Script faq</a>)</li>" +
+                "<li>Because the script that I'm using is for INTEL CPU only (<a href='https://github.com/mihic/linux-intel-undervolt'>Script faq</a>).</li>" +
                 "</ol>" +
                 "</li>" +
                 "</ol>" +
-                "<p><strong>Error code: </strong></p>" +
+                "<p><strong>Error codes:</strong></p>" +
                 "<ul>" +
-                "<li>&nbsp;Code: 1.0 --&gt; Class: Undervolt.java --&gt; Method: runScript" +
+                "<li>Code: 1.0 → Class: Undervolt.java → Method: runScript()" +
                 "<ul>" +
-                "<li>Solution: Application start with no sudo permission or something is wrong with undervolt.py file</li>" +
+                "<li>Solution: Application start with no sudo permission or something is wrong with undervolt.py file.</li>" +
                 "</ul>" +
                 "</li>" +
-                "<li>Code: 2.0 --&gt; Class: Undervolt.java --&gt; Method: setValue" +
+                "<li>Code: 2.0 → Class: Undervolt.java → Method: setValue()" +
                 "<ul>" +
-                "<li>Solution: Error during setting voltage, pc not compatible or something is wrong with undervolt.py file</li>" +
+                "<li>Solution: Error during setting voltage, PC not compatible or something is wrong with undervolt.py file.</li>" +
                 "</ul>" +
                 "</li>" +
-                "</ul>"   +
-                "<p><strong>Bug: </strong></p>" +
-                "</ul>"   +
-                "<li>Override save will create a double extension (like Profile1.txt.txt)</li>" +
-                "<li>I'm sure i've miss some... if you find one.. or two... or more just tell me ;-) </li>" +
-                "</ul>"   +
+                "</ul>" +
+                "<p><strong>Known bug(s): </strong></p>" +
+                "</ul>" +
+                "<li>Make those links works</li>" +
+                "<li>I'm sure I've missed some... If you find one... Or two... Or more, please open an issue ;-)</li>" +
+                "</ul>" +
                 "<p><strong>Thanks to: </strong></p>" +
-                "</ul>"   +
-                "<li>Georgewhewell and all his contributors for undervolt.py</li>" +
-                "<li><a href='https://github.com/georgewhewell/undervolt'>https://github.com/georgewhewell/undervolt</a></li>" +
-                "<li>Caffinc for the cpu stress class</li>" +
-                "<li><a href='https://caffinc.github.io/2016/03/cpu-load-generator'>https://caffinc.github.io/2016/03/cpu-load-generator</a></li>" +
+                "</ul>" +
+                "<li>Georgewhewell and all his contributors for <a href='https://github.com/georgewhewell/undervolt'>undervolt.py</a></li>" +
+                "<li>Caffinc for the <a href='https://caffinc.github.io/2016/03/cpu-load-generator'>CPU stress class</a></li>" +
                 "</ul>"   +
                 "</html>"
         );
@@ -65,18 +62,25 @@ public class Faq {
     //ONLY FOR FIRST INSTANCE
     public void createUi(){
         UIManager.getDefaults().put("Button.disabledText", Color.decode("#EAB23B"));
-        frame = new JFrame("Faq and error code");
+        frame = new JFrame("FAQ / Error codes");
         frame.setContentPane(new Faq().FaqMainPanel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
         try {
-            frame.setIconImage(ImageIO.read(new File(configs.getImage_path()+"icofaq.png")));
+            InputStream in = getClass().getResourceAsStream("/img/icofaq.png");
+            if (in == null) {
+                frame.setIconImage(ImageIO.read(new File("/resources/img/icofaq.png")));           // JAR
+            } else {
+                frame.setIconImage(ImageIO.read(getClass().getResourceAsStream("/img/icofaq.png")));   // IDE
+            }
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("No icon found");
         }
+
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-    //END INSTANZE
-
+    //END INSTANCE
 }

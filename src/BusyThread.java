@@ -1,4 +1,4 @@
-public class BusyThread extends Thread{
+public class BusyThread extends Thread {
     private double load;
     private long duration;
 
@@ -29,7 +29,8 @@ public class BusyThread extends Thread{
                 }
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            // Thread stop and killed
+            //System.out.println(this.getName() + " killed");
         }
     }
 }
