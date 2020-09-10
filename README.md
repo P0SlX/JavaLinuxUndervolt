@@ -20,10 +20,10 @@ You can also save your profile.
 **TESTED ON JAVA JRE 14 ONLY!**
 
 ```bash
- Make sure to have python3 and java JRE 14 installed
- Download the .jar file
+  Make sure to have python3 and java JRE 14 installed
+  Download the .jar file
 $ sudo java -jar <path>.jar
- Have fun ;-)
+  Have fun ;-)
 ```
 
 Tested on: 
